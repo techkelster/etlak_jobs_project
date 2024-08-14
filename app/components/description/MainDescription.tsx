@@ -16,42 +16,45 @@ const MainDescription: React.FC<MainDescriptionProps> = ({
   whenAndWhere,
 }) => {
   return (
-    <div>
-      <h2>Description</h2>
-      <p>{description}</p>
-      <h2>Responsiblities</h2>
-      <ul>
-        {responsiblities.map((item) => {
+    <div className="pt-[50px] pl-[40px] w-2/3">
+      <h1 className="text-3xl font-extrabold mb-[10px]">Description</h1>
+      <p className="mb-[50px]">{description}</p>
+      <h1 className="text-3xl font-extrabold mb-[10px]">Responsiblities</h1>
+      <ul className="mb-[50px]">
+        {responsiblities.map((item, index) => {
           return (
-            <li>
-              <span>icon</span>
+            <li key={index}>
+              <span key={index}>
+                <img className="inline" src="/assets/tick.png" />
+              </span>
               {item}
             </li>
           );
         })}
       </ul>
 
-      <h2>Ideal Candidate We Want</h2>
-      <ul>
-        <li>
-          <span>icon</span>Age {age}
-        </li>
-        <li>
-          <span>icon</span>Gender {gender}
-        </li>
-        {traits.map((item) => {
+      <h1 className="text-3xl font-extrabold mb-[10px]">
+        Ideal Candidate We Want
+      </h1>
+      <ul className="ml-[20px] mb-[50px]">
+        <li className="list-disc">Age {age}</li>
+        <li className="list-disc">Gender {gender}</li>
+        {traits.map((item, index) => {
           return (
-            <li>
-              <span>icon</span> {item}
+            <li className="list-disc" key={index}>
+              {item}
             </li>
           );
         })}
       </ul>
 
-      <h2>Where and When</h2>
+      <h2 className="text-3xl font-extrabold mb-[10px]">Where and When</h2>
       <p>
         {" "}
-        <span>icon</span> {whenAndWhere}
+        <span>
+          <img className="inline" src="/assets/Location.png" alt="" />
+        </span>{" "}
+        {whenAndWhere}
       </p>
     </div>
   );

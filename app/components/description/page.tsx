@@ -1,7 +1,8 @@
+"use client";
 import jobs from "../../../public/assets/jobs.json";
 import MainDescription from "./MainDescription";
 import SideBarDescription from "./SideBarDescription";
-import { useRouter } from "next/router";
+import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 
 interface Job {
@@ -32,16 +33,14 @@ interface About {
 }
 
 export default function Page() {
-  const router = useRouter();
-  const { index } = router.query;
+  const search = useSearchParams();
+  const index = search.get("index");
 
   const [job, setJob] = useState<Job>();
 
   useEffect(() => {
-    if (index !== undefined) {
-      const idx = Array.isArray(index)
-        ? parseInt(index[0], 10)
-        : parseInt(index, 10);
+    if (index !== null) {
+      const idx = parseInt(index);
 
       if (!isNaN(idx) && idx >= 0 && idx < jobs.job_postings.length) {
         setJob(jobs.job_postings[idx]);
@@ -54,7 +53,7 @@ export default function Page() {
   }
 
   return (
-    <>
+    <div className="flex justify-between">
       <MainDescription
         description={job.description}
         responsiblities={job.responsibilities}
@@ -72,6 +71,6 @@ export default function Page() {
         catagories={job.about.categories}
         required_skills={job.about.required_skills}
       />
-    </>
+    </div>
   );
 }

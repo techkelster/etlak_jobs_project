@@ -1,13 +1,16 @@
 interface LittleSideProps {
   type: string;
   value: string;
+  img: string;
 }
 
-const LittleSide: React.FC<LittleSideProps> = ({ type, value }) => {
+const LittleSide: React.FC<LittleSideProps> = ({ type, value, img }) => {
   return (
-    <div>
-      <span>icon</span>
-      <div>
+    <div className="flex gap-2 items-center">
+      <span>
+        <img className="inline" src={img} alt="" />
+      </span>
+      <div className="flex flex-col">
         <span>{type}</span>
         <span>{value}</span>
       </div>

@@ -1,4 +1,5 @@
 import JobHeader from "./JobHeader";
+import JobBody from "./JobBody";
 
 interface JobCardProps {
   title: string;
@@ -16,7 +17,7 @@ const JobCard: React.FC<JobCardProps> = ({
   description,
 }) => {
   return (
-    <div>
+    <div className="border-2 w-[919px] ml-24 mt-16 p-4 rounded-xl">
       <JobHeader
         title={title}
         company={company}

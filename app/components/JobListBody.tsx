@@ -9,6 +9,7 @@ const JobListBody: React.FC = () => {
       {jobs_arr.map((item, index) => {
         return (
           <Link
+            key={index}
             href={{
               pathname: "/components/description",
               query: { index: index },

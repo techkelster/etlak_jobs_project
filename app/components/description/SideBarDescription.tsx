@@ -19,26 +19,61 @@ const SideBarDescription: React.FC<SideBarDescriptionProps> = ({
   catagories,
   required_skills,
 }) => {
+  const img = {
+    posted_icon: "/assets/plus-circle.png",
+    deadline_icon: "/assets/fire.png",
+    location_icon: "/assets/Location.png",
+    start_date_icon: "/assets/calendar.png",
+    end_date_icon: "/assets/calendar.png",
+  };
   return (
-    <div>
-      <h2>About</h2>
-      <div>
-        <LittleSide type={"Posted On"} value={posted_on} />
-        <LittleSide type={"Deadline"} value={deadline} />
-        <LittleSide type={"Location"} value={location} />
-        <LittleSide type={"Start Date"} value={start_date} />
-        <LittleSide type={"End Date"} value={end_date} />
+    <div className="w-[293.5px]">
+      <h1 className="text-3xl font-extrabold mb-[10px]">About</h1>
+      <div className="flex flex-col gap-8 pt-[30px]">
+        <LittleSide
+          type={"Posted On"}
+          value={posted_on}
+          img={img.posted_icon}
+        />
+        <LittleSide
+          type={"Deadline"}
+          value={deadline}
+          img={img.deadline_icon}
+        />
+        <LittleSide
+          type={"Location"}
+          value={location}
+          img={img.location_icon}
+        />
+        <LittleSide
+          type={"Start Date"}
+          value={start_date}
+          img={img.start_date_icon}
+        />
+        <LittleSide
+          type={"End Date"}
+          value={end_date}
+          img={img.end_date_icon}
+        />
       </div>
-      <h2>Catagories</h2>
+      <h1 className="text-3xl font-extrabold mb-[10px]">Catagories</h1>
       <div>
-        {catagories.map((item) => {
-          return <span>{item}</span>;
+        {catagories.map((item, index) => {
+          return (
+            <span className="three px-6 h-7 rounded-3xl" key={index}>
+              {item}
+            </span>
+          );
         })}
       </div>
-      <h2>Required Skills</h2>
-      <div>
-        {required_skills.map((item) => {
-          return <span>{item}</span>;
+      <h1 className="text-3xl font-extrabold mb-[10px]">Required Skills</h1>
+      <div className="flex flex-wrap">
+        {required_skills.map((item, index) => {
+          return (
+            <span className="four p-2 m-1 border-none" key={index}>
+              {item}
+            </span>
+          );
         })}
       </div>
     </div>

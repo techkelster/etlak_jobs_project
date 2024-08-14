@@ -12,14 +12,15 @@ const JobHeader: React.FC<JobHeaderProps> = ({
   img,
 }) => {
   return (
-    <div>
-      <img src={img} alt="company logo" />
+    <div className="flex items-center">
+      <img src={img} alt="company logo" className="mr-4" />
 
       <div>
-        <p>{title}</p>
-        <div>
+        <p className="text-xl font-bold">{title}</p>
+        <div className="flex font-extralight items-center">
           <span>{company}</span>
-          <span>{location}, Ethiopia</span>
+          <span className="ml-1 mr-1">.</span>
+          <span>{location}</span>
         </div>
       </div>
     </div>

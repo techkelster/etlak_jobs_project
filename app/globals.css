@@ -16,18 +16,32 @@
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
-
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+.one {
+  background: rgba(86, 205, 173, 0.1);
+  color: green;
+  /* border:1px solid green; */
+}
+.line {
+  border-left: 1px solid rgba(214, 221, 235, 1);
+}
+.two {
+  border: 1px solid rgba(255, 184, 54, 1);
+  color: rgba(255, 184, 54, 1);
+  background: rgba(255, 184, 54, 0.1);
+}
+.three {
+  color: rgba(70, 64, 222, 1);
+  border: 1px solid rgba(70, 64, 222, 1);
+  background: rgba(70, 64, 222, 0.1);
+}
+
+.four {
+  color: rgba(70, 64, 222, 1);
+  background: rgba(70, 64, 222, 0.1);
 }

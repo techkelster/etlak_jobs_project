@@ -30,7 +30,7 @@
         "required_skills": ["Social Media Marketing", "English", "Copywriting"]
       },
       "company": "ABC Media",
-      "image": "/job1.png"
+      "image": "/images/image_1.png"
     },
     {
       "title": "Web developer",
@@ -62,7 +62,7 @@
         "required_skills": ["HTML", "CSS", "JavaScript", "PHP"]
       },
       "company": "Tech Innovators",
-      "image": "/job1.png"
+      "image": "/images/image_2.png"
     },
     {
       "title": "Graphic designer",
@@ -100,7 +100,7 @@
         ]
       },
       "company": "Creative Designs Co.",
-      "image": "/job1.png"
+      "image": "/images/image_3.png"
     },
     {
       "title": "Data analyst",
@@ -133,7 +133,7 @@
         "required_skills": ["SQL", "Python", "Excel", "Statistical Analysis"]
       },
       "company": "Data Insights Inc.",
-      "image": "/job1.png"
+      "image": "/images/image_4.png"
     },
     {
       "title": "Customer support specialist",
@@ -172,7 +172,7 @@
         ]
       },
       "company": "Customer Care Ltd.",
-      "image": "/job1.png"
+      "image": "/images/image_1.png"
     }
   ]
 }
