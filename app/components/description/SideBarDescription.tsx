@@ -59,7 +59,7 @@ const SideBarDescription: React.FC<SideBarDescriptionProps> = ({
       <hr className="m-[10px]" />
       <h1 className="text-3xl font-extrabold mb-[10px]">Catagories</h1>
 
-      <div>
+      <div className="flex flex-wrap">
         {catagories.map((item, index) => {
           return (
             <span className="three px-6 h-7 rounded-3xl" key={index}>
