@@ -56,7 +56,9 @@ const SideBarDescription: React.FC<SideBarDescriptionProps> = ({
           img={img.end_date_icon}
         />
       </div>
+      <hr className="m-[10px]" />
       <h1 className="text-3xl font-extrabold mb-[10px]">Catagories</h1>
+
       <div>
         {catagories.map((item, index) => {
           return (
@@ -66,6 +68,7 @@ const SideBarDescription: React.FC<SideBarDescriptionProps> = ({
           );
         })}
       </div>
+      <hr className="m-[10px]" />
       <h1 className="text-3xl font-extrabold mb-[10px]">Required Skills</h1>
       <div className="flex flex-wrap">
         {required_skills.map((item, index) => {
