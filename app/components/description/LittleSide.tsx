@@ -11,7 +11,7 @@ const LittleSide: React.FC<LittleSideProps> = ({ type, value, img }) => {
         <img className="inline" src={img} alt="" />
       </span>
       <div className="flex flex-col">
-        <span>{type}</span>
+        <span className="font-extralight">{type}</span>
         <span>{value}</span>
       </div>
     </div>
