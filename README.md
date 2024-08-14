@@ -1,4 +1,4 @@
-# Todo List App
+# Simple Job Listing next app
 
 A simple next job listing app
 
