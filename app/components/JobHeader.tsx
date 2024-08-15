@@ -13,7 +13,7 @@ const JobHeader: React.FC<JobHeaderProps> = ({
 }) => {
   return (
     <div className="flex items-center">
-      <img src={img} alt="company logo" className="mr-4" />
+      <img src={img} alt="company logo" className="mr-4 w-16" />
 
       <div>
         <p className="text-xl font-bold">{title}</p>

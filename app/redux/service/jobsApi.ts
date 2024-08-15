@@ -1,7 +1,7 @@
 "use client";
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
-interface Job {
+export interface Job {
   id: string;
   title: string;
   description: string;
@@ -39,7 +39,7 @@ export const jobsApi = createApi({
   reducerPath: "jobs",
   baseQuery: fetchBaseQuery({ baseUrl: "https://akil-backend.onrender.com/" }),
   endpoints: (builder) => ({
-    getAllJobs: builder.query<Job, void>({
+    getAllJobs: builder.query<any, void>({
       query: () => ({ url: "opportunities/search", method: "get" }),
     }),
   }),

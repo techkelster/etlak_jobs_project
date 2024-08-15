@@ -1,39 +1,40 @@
 "use client";
 
 import Link from "next/link";
-import jobs from "./../../public/assets/jobs.json";
 import JobCard from "./JobCard";
 import { useGetAllJobsQuery } from "../redux/service/jobsApi";
+import { Job } from "../redux/service/jobsApi";
+import LoadingSpinner from "./LoadingSpinner";
+import ErrorComponent from "./Error";
 
 const JobListBody: React.FC = () => {
-  const res = useGetAllJobsQuery();
+  const { data, isLoading, isError } = useGetAllJobsQuery();
 
-  const data = jobs.job_postings;
-  console.log(res);
-
-  const jobs_arr = data;
   return (
     <div>
-      {jobs_arr?.map((item, index) => {
-        return (
+      {isLoading ? (
+        <LoadingSpinner></LoadingSpinner>
+      ) : isError ? (
+        <ErrorComponent />
+      ) : (
+        data.data?.map((item: Job, index: number) => (
           <Link
             key={index}
             href={{
               pathname: "/components/description",
-              query: { index: index },
+              query: { index: index, job: JSON.stringify(item) },
             }}
           >
             <JobCard
-              key={index}
               title={item.title}
-              company={item.company}
-              location={item.about.location}
-              img={item.image}
+              company={item.orgName}
+              location={item.location.join(" ")}
+              img={item.logoUrl}
               description={item.description}
             />
           </Link>
-        );
-      })}
+        ))
+      )}
     </div>
   );
 };

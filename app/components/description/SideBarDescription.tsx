@@ -27,7 +27,7 @@ const SideBarDescription: React.FC<SideBarDescriptionProps> = ({
     end_date_icon: "/assets/calendar.png",
   };
   return (
-    <div className="w-[293.5px]">
+    <div className="">
       <h1 className="text-3xl font-extrabold mb-[10px]">About</h1>
       <div className="flex flex-col gap-8 pt-[30px]">
         <LittleSide
@@ -62,7 +62,7 @@ const SideBarDescription: React.FC<SideBarDescriptionProps> = ({
       <div className="flex flex-wrap">
         {catagories.map((item, index) => {
           return (
-            <span className="three px-6 h-7 rounded-3xl" key={index}>
+            <span className="three px-6 h-7 rounded-3xl m-1" key={index}>
               {item}
             </span>
           );

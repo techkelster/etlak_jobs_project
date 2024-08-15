@@ -1,7 +1,9 @@
 import jobs from "./../../public/assets/jobs.json";
+import { useGetAllJobsQuery } from "../redux/service/jobsApi";
 
 const JobListHeader: React.FC = () => {
-  const results: number = jobs.job_postings.length;
+  const { data, isLoading, isError } = useGetAllJobsQuery();
+  const results: number = isLoading || isError ? 0 : data.data.length;
 
   return (
     <div className="flex flex-wrap justify-between items-center w-4/5 pt-16 pl-24">

@@ -1,3 +1,29 @@
+.errorContainer {
+  display: "flex";
+  flex-direction: "column";
+  justify-content: "center";
+  align-items: "center";
+  height: "100vh";
+  background-color: "#f8d7da";
+  color: "#721c24";
+  padding: "20px";
+  box-sizing: "border-box";
+}
+
+.errorMessage {
+  font-size: "24px";
+  margin-bottom: "20px";
+}
+.retryButton {
+  padding: "10px 20px";
+  font-size: "16px";
+  background-color: "#721c24";
+  color: "#fff";
+  border: "none";
+  border-radius: "5px";
+  cursor: "pointer";
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -44,4 +70,29 @@
 .four {
   color: rgba(70, 64, 222, 1);
   background: rgba(70, 64, 222, 0.1);
+}
+
+@-moz-keyframes spin {
+  from {
+    -moz-transform: rotate(0deg);
+  }
+  to {
+    -moz-transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes spin {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
