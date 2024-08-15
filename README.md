@@ -1,10 +1,10 @@
 # Simple Job Listing next app
 
-A simple next job listing app
+A simple next job listing app from akil backend json file.
 
 ## Features
 
-- list jobs from a json data
+- get request using RTK query and list jobs
 - show detail of a given job
 
 ## Installation
@@ -15,7 +15,7 @@ A simple next job listing app
 
 ## ScreenShots
 
-![alt initial_page](./readmeimg/initial_page.png)
-![alt next_intial_page](./readmeimg/next_intial_page.png)
-![alt initial_description](./readmeimg/initial_description.png)
-![alt next_page_description](./readmeimg/next_page_description.png)
+![alt loading](./readmeimg/loading.png)
+![alt loaded](./readmeimg/loaded.png)
+![alt error](./readmeimg/error.png)
+![alt detail](./readmeimg/detail.png)

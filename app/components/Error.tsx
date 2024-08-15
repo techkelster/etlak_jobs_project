@@ -1,5 +1,4 @@
 import React from "react";
-import "./error.css";
 
 interface ErrorComponentProps {
   message?: string;
@@ -11,8 +10,8 @@ const ErrorComponent: React.FC<ErrorComponentProps> = ({
   onRetry,
 }) => {
   return (
-    <div className="errorContainer">
-      <h1 className="errorMessage">{message}</h1>
+    <div className="flex justify-center items-center min-h-screen">
+      <h1 className="text-red-800">{message}</h1>
       {onRetry && (
         <button className="retryButton" onClick={onRetry}>
           Retry
