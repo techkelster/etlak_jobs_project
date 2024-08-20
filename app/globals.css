@@ -70,3 +70,22 @@
     transform: rotate(360deg);
   }
 }
+
+.text-brand-color {
+  color: #4640de;
+}
+
+.back-brand-color {
+  background-color: #4640de;
+}
+
+.body-color {
+  background-color: #e1ebebe5;
+}
+
+.error {
+  color: #e74c3c;
+  font-size: 14px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+}
