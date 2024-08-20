@@ -41,7 +41,7 @@ _An example of the OTP input fields filled with the verification code._
 
 ### 4. Verified Modal
 
-![Verified Modal](./readmeimg/otp_filled.png)
+![Verified Modal](./readmeimg/verified_modal.png)
 _A modal that appears after successful verification, indicating that the user's email has been verified._
 
 ### 5. Sign-In Page
