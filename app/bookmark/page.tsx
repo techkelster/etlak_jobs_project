@@ -18,7 +18,7 @@ interface BookMarkCardProps {
   title: string; // Title of the event or position
 }
 
-const BookMarkCard: React.FC<BookMarkCardProps> = () => {
+const BookMarkCard: React.FC = () => {
   const { data: session } = useSession();
   const {
     data: dataBookMark,
@@ -46,15 +46,8 @@ const BookMarkCard: React.FC<BookMarkCardProps> = () => {
     );
   }
 
-  console.log(dataBookMark, "here is it");
-
   return (
-    <div
-      className="max-w-4xl
-     mx-auto p-4"
-    >
-      {" "}
-      {/* Container with max-width */}
+    <div className="max-w-4xl mx-auto p-4">
       {/* Header with Back Icon and Title */}
       <div className="flex items-center justify-between mb-6">
         <Link href="/">
