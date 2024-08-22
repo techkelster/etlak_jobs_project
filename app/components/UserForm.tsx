@@ -189,8 +189,8 @@ export const UserForm = () => {
         </p>
 
         <p className="w-full text-left font-extralight">
-          By clicking 'Continue', you acknowledge that you have read and
-          accepted our{" "}
+          By clicking Continue, you acknowledge that you have read and accepted
+          our{" "}
           <Link href="">
             <span className="text-brand-color">Terms of Service</span>
           </Link>{" "}
