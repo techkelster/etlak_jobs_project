@@ -38,11 +38,61 @@ export interface Job {
 export const jobsApi = createApi({
   reducerPath: "jobs",
   baseQuery: fetchBaseQuery({ baseUrl: "https://akil-backend.onrender.com/" }),
+  tagTypes: ["BookMark", "Jobs", "Ajob"],
   endpoints: (builder) => ({
     getAllJobs: builder.query<any, void>({
       query: () => ({ url: "opportunities/search", method: "get" }),
+      providesTags: ["Jobs"],
+    }),
+
+    getajob: builder.query<any, { id: string }>({
+      query: ({ id }) => ({
+        url: `opportunities/${id}`,
+        method: "get",
+      }),
+
+      providesTags: ["Ajob"],
+    }),
+
+    getBookmarks: builder.query<any, { token: string }>({
+      query: ({ token }) => ({
+        url: "bookmarks",
+        method: "get",
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }),
+      providesTags: ["BookMark"],
+    }),
+
+    createBookmark: builder.mutation<any, { eventID: string; token: string }>({
+      query: ({ eventID, token }) => ({
+        url: `bookmarks/${eventID}`,
+        method: "post",
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+        body: {},
+      }),
+      invalidatesTags: ["BookMark", "Jobs"],
+    }),
+    unbookmark: builder.mutation<any, { eventID: string; token: string }>({
+      query: ({ eventID, token }) => ({
+        url: `bookmarks/${eventID}`,
+        method: "delete",
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }),
+      invalidatesTags: ["BookMark", "Jobs"],
     }),
   }),
 });
 
-export const { useGetAllJobsQuery } = jobsApi;
+export const {
+  useGetAllJobsQuery,
+  useGetajobQuery,
+  useGetBookmarksQuery,
+  useCreateBookmarkMutation,
+  useUnbookmarkMutation,
+} = jobsApi;

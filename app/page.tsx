@@ -7,6 +7,7 @@ import JobListBody from "./components/JobListBody";
 import JobListHeader from "./components/JobListHeader";
 import { store } from "./redux/store";
 import LoadingSpinner from "./components/LoadingSpinner";
+import { useGetBookmarksQuery } from "./redux/service/jobsApi";
 
 export default function Home() {
   const { data: session, status } = useSession();
@@ -20,7 +21,6 @@ export default function Home() {
     ); // Optionally handle loading state
   }
 
-  console.log("here is the session at the page", session);
   if (!session) {
     router.push("/api/auth/signin");
     return null; // Prevent rendering the rest of the page

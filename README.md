@@ -1,6 +1,6 @@
 # Simple Job Listing App
 
-A simple job listing application built with Next.js that fetches job data from a backend JSON file using Redux Toolkit Query (RTK Query) and user authentication and authorization using nextAuth and react hook form for form validation. The app allows users to view a list of available jobs and see detailed information about each job.
+A simple job listing application built with Next.js that fetches job data from a backend JSON file using Redux Toolkit Query (RTK Query) and user Authentication and Authorization using nextAuth and react hook form for form validation. The app allows users to view a list of available jobs and see detailed information about each job.
 
 ## Features
 

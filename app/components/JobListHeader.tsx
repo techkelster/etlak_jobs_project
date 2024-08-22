@@ -43,6 +43,14 @@ const JobListHeader: React.FC = () => {
               </Link>
             )}
           </div>
+          <Link href="/bookmark">
+            <div className="flex justify-center items-end fixed top-5 left-0 right-95 ml-5">
+              <img src="/assets/booked.svg" alt="" className="mr-4 w-10" />{" "}
+              <span className="rounded-md w-auto h-10 text-white back-brand-color  mr-1">
+                Bookmarks
+              </span>
+            </div>
+          </Link>
         </div>
       </div>
     </div>

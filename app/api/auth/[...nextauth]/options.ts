@@ -7,23 +7,6 @@ import { Session } from "next-auth";
 
 export const options: NextAuthOptions = {
   providers: [
-    GitHubProvider({
-      clientId: process.env.GITHUB_ID as string,
-      clientSecret: process.env.GITHUB_SECRET as string,
-      profile(profile) {
-        console.log("Profile GitHub: ", profile);
-
-        let userRole = "GitHub User";
-        if (profile?.email === "jake@claritycoders.com") {
-          userRole = "admin";
-        }
-
-        return {
-          ...profile,
-          role: userRole,
-        };
-      },
-    }),
     GoogleProvider({
       clientId: process.env.GOOGLE_ID as string,
       clientSecret: process.env.GOOGLE_SECRET as string,
@@ -106,12 +89,32 @@ export const options: NextAuthOptions = {
     verifyRequest: "/auth/verify-request",
   },
   callbacks: {
-    async jwt({ token, user }: { token: JWT; user: any }) {
-      if (user) token.role = user.role;
+    async jwt({ token, user }: { token: JWT; user?: any }) {
+      if (user) {
+        // Store all the user data in the token
+        token.id = user.id;
+        token.accessToken = user.accessToken;
+        token.refreshToken = user.refreshToken;
+        token.name = user.name;
+        token.email = user.email;
+        token.profilePicUrl = user.profilePicUrl;
+        token.role = user.role;
+        token.profileComplete = user.profileComplete;
+        token.profileStatus = user.profileStatus;
+      }
       return token;
     },
     async session({ session, token }: { session: Session; token: JWT }) {
-      if (session.user) session.user.role = token.role;
+      // Pass the user data from the token to the session
+      session.user.id = token.id;
+      session.user.accessToken = token.accessToken;
+      session.user.refreshToken = token.refreshToken;
+      session.user.name = token.name;
+      session.user.email = token.email;
+      session.user.profilePicUrl = token.profilePicUrl;
+      session.user.role = token.role;
+      session.user.profileComplete = token.profileComplete;
+      session.user.profileStatus = token.profileStatus;
       return session;
     },
     async redirect({ url, baseUrl }) {
