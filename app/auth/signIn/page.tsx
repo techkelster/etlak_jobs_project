@@ -93,7 +93,7 @@ export default function SignInPage() {
             {isLoading ? "Signing in..." : "Login"}
           </button>
           <p className="w-full text-left font-extralight mb-4">
-            Don't have an account?{" "}
+            Don&apos;t have an account?{" "}
             <Link href="/auth/signup">
               <span className="text-brand-color">Sign Up</span>
             </Link>

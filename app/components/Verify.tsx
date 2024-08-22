@@ -89,8 +89,8 @@ const Verify: React.FC<VerifyProps> = ({ email }) => {
         noValidate
       >
         <p className="text-left font-thin mb-20">
-          We've sent a verification code to the email address you provided. To
-          complete the verification process, please enter the code here.
+          We&apos;ve sent a verification code to the email address you provided.
+          To complete the verification process, please enter the code here.
         </p>
 
         <div className="flex justify-center items-center space-x-3 mb-4">
